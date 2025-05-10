@@ -1,0 +1,120 @@
+.visit-page {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    justify-items: center;
+    padding-top: 87px;
+    padding-bottom: 40px;
+}
+
+.visit-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: clamp(304px, 47.3vw, 458px);
+    font-size: clamp(15px, 2.3vw , 18px);
+    color: #4b4b4b;
+    font-family: 'Times New Roman', sans-serif;
+    line-height: clamp(23px, 3.593vw, 30px);
+    font-weight: 300;
+    padding-top: 25px;
+    margin-bottom: 17px;    
+}
+
+.top-title, .bottom-title {
+    color: #870505;
+    font-size: clamp(30px, 4.685vw, 40px);
+    font-family: 'Times New Roman', sans-serif;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.visit-line {
+    width: 2px;
+    height: 80px;
+}
+
+.box {
+    position: relative;
+    justify-items: center;
+    max-width: 100vw;
+    overflow: visible;
+}
+.date-numbers {
+    margin: 41.5px 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', sans-serif;
+    color:#4b4b4b;
+    line-height: 1;
+}
+
+.day, .month {
+    font-size: 75px;
+}
+
+.year {
+    font-size: 40px;
+    margin-top: 15px;
+}
+
+.bottom-title {
+    margin-top: 16px;
+}
+
+.letter-container {
+    display: flex;
+}
+
+.letter {
+    position: absolute;
+    font-size: 200px; /* Настройте размер */
+    font-family: 'Hamiltoneg', Regular;
+    color: #f3e6e6; /* Полупрозрачный цвет */
+    transition: transform 0.3s ease; /* Плавность */
+    top: 0%;
+  }
+
+.left-letter {
+    left: 0; /* Начало на левом краю */
+    top: 15%;
+  }
+  
+  .right-letter {
+    right: 0; /* Начало на правом краю */
+    top: 15%;
+  }
+
+  @media (width < 960px) {
+    
+    .letter {
+        font-size: 150px;
+    }
+
+    .left-letter {
+        top: 20%;
+      }
+    
+      .right-letter {
+      top: 20%;
+    }
+  }
+
+  @media (width < 480px) {
+
+    .letter {
+        font-size: 100px;
+    }
+
+    .left-letter {
+        bottom: 0; /* Прижат к нижнему краю .box */
+        align-self: end;
+      }
+      
+      .right-letter {
+        top: 0; /* Прижат к верхнему краю .box */
+      }
+  }

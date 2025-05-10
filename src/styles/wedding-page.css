@@ -1,0 +1,148 @@
+@keyframes fadeInOut {
+  0% {
+    opacity: 1; /* Полная видимость */
+  }
+  50% {
+    opacity: 0; /* Полное исчезновение */
+  }
+  100% {
+    opacity: 1; /* Снова полная видимость */
+  }
+}
+
+@font-face {
+  font-family: 'Hamiltoneg';
+  src: url('../assets/fonts/Hamiltoneg.ttf') format('truetype');
+  font-style: normal;
+}
+
+.wedding-page {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  position: relative;
+  background: url('../assets/background.png') no-repeat center center/cover;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.wedding-page::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.top-section {
+  text-align: center;
+  padding-top: 55px; 
+  position: relative;
+}
+
+.top-section button {
+  width: 105px;
+  height: 105px;
+  position: relative;
+}
+
+.tap {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  bottom: -20px;
+  right: -18px;
+  transform: rotate(321deg);   
+  animation: fadeInOut 3s infinite;
+}
+
+.main-title {
+  font-family: 'Hamiltoneg', Regular;
+  font-weight: 400;
+  font-size: clamp(40px, 6.25vw, 148px);
+  color: #8b0000;
+}
+
+.sub-title {
+  font-family: 'Times New Roman', sans-serif;
+  font-weight: 400;
+  font-size: clamp(37px, 4.6875vw, 75px);
+  color: #4b4b4b; 
+  text-transform: uppercase;
+  line-height: 1.157em;
+  letter-spacing: 10px;
+  margin-bottom: 30px;
+  margin-top: -4.3vw;
+}
+
+.music-control {
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.music-control:hover {
+  transform: scale(1.1);
+}
+
+.couple-photo {
+  width: 324px; /* Ширина фотографии */
+  height: 366px; /* Высота фотографии */
+  display: block; /* Убедитесь, что изображение отображается как блок */
+  margin-left: auto; /* Центрирование по горизонтали */
+  margin-right: auto; /* Центрирование по горизонтали */
+  transition: transform 0s ease-in-out; /* Убираем трансформацию, если она не нужна */
+  object-fit: cover;
+}
+
+@media (width <= 1440px) {
+  .sub-title {
+    margin-top: -3.33vw
+  }
+}
+
+@media (width < 1200px) {
+  .top-section {
+    padding-top: 72.5px;
+  }
+}
+
+@media (width < 960px) {
+  .top-section {
+    padding-top: 120px;
+  }
+
+  .top-section button {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tap {
+    width: 46px;
+    height: 46px;
+  }
+
+  .sub-title {
+    margin-bottom: 17px;
+  }
+}
+
+@media (width < 480px) {
+  .couple-photo {
+    width: 261px; /* Ширина фотографии */
+    height: 328px; /* Высота фотографии */
+  }
+
+  .top-section {
+    padding-top: 150px;
+  }
+
+  .top-section h2 {
+    letter-spacing: 2.5px;
+  }
+
+  .sub-title {
+    margin-bottom: 25px;
+  }
+}

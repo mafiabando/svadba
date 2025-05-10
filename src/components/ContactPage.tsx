@@ -1,0 +1,21 @@
+import React from "react";
+import "../styles/contact-page.css"; // Импортируем CSS
+
+const ContactPage: React.FC = () => {
+  return (
+    <>
+      <div className="contact-page">
+        <div className="contact-container">
+          <div className="contact-container_border">
+              <h1 className="contact-title">организатор</h1>
+              <p className="contact-description"> Если Вы подготовили для нас сюрприз или в случае возникновения вопросов, Вы всегда можете обратиться за помощью и согласованием к нашему свадебному организатору</p>
+              <span className="contact-name">Анна Чаплыгина</span>
+              <button className="contact-button">Позвонить</button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ContactPage;

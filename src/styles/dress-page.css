@@ -1,0 +1,216 @@
+.dress-page {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    justify-items: center;
+    padding-top: 60px;
+}
+
+.dress-title {
+    margin-top: 68px;
+    vertical-align: middle;
+    color: #870505;
+    font-size: clamp(30px, 4.685vw, 40px);
+    font-family: 'Times New Roman', sans-serif;
+    line-height: 1.4;   
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dress-text {
+    margin-top: 30px;
+    width: clamp(269px, 56vw, 440px);
+    vertical-align: middle;
+    color: #4b4b4b;
+    font-size: clamp(15px, 2.3vw , 17px);
+    font-family: Arial, sans-serif;
+    line-height: clamp(23px, 3.59vw , 28px);
+    font-weight: 300;
+}
+
+.dress-colors {
+    width: clamp(300px, 52.8vw, 425px);
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.colors {
+    display: flex;
+    justify-content: space-between;
+}
+
+.color {
+    width: clamp(80px, 12.5vw, 120px);
+    height: clamp(120px, 18.75vw ,180px);
+}
+
+.lines {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.line-container {
+    display: flex;
+    flex-direction: column;
+    width: clamp(80px, 12.5vw, 120px);
+}
+
+
+.color-line {
+    width: 1px;
+    height: clamp(40px, 6.25vw, 60px);
+    background-color: grey;
+    border-radius: 12%;
+    margin: 0 auto;
+}
+
+.color-text {
+    max-width: 150px;
+    margin-top: 15px;
+    font-family: 'Times New Roman', sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(12px, 1.875vw, 16px);
+}
+
+.dress-description {
+    margin-top: 54px;
+    display: block;
+    color: #4b4b4b;
+    font-size: clamp(12px, 2.5vw, 15px);
+    font-family: Arial, sans-serif;
+    line-height: 28px;
+    font-weight: 300;
+    font-style: italic;
+    width: 440px;
+}
+
+.black {
+    background: url(../assets/black.JPG) center/cover;
+}
+
+.brown {
+    background: url(../assets/brown.JPG) center/cover;
+}
+
+.red {
+    background: url(../assets/red.JPG) center/cover;
+}
+
+.slider {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    overflow: hidden; /* Скрываем лишнее */
+}
+
+.image {
+    position: relative;
+    justify-self: center;
+    width: clamp(234px, 36.5625vw, 424px);
+    height: clamp(345px, 53.9vw ,533px); /* Убедитесь, что высота задана */
+    background-size: cover; /* Масштабируем изображение */
+    background-position: center; 
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    object-fit: cover;
+    transition: background-image 0.5s ease; /* Плавный переход между изображениями */
+}
+
+.dress-page_button {
+    position: absolute;
+    display: inline-flex;
+    flex-wrap:wrap;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-content: center;
+    z-index: 2;
+}
+
+.prev {
+    left: 20px; /* Отступ от левого края */
+}
+
+.next {
+    right: 20px; /* Отступ от правого края */
+}
+
+.arrow {
+    stroke-width: 1px;
+    stroke: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.arrow_prev {
+    transform: rotate(180deg);
+}
+
+@media (width < 1200px) {
+    .dress-title {
+        margin-top: 52px;
+    }
+
+    .dress-colors {
+        margin-top: 52px;
+    }
+
+    .slider {
+        margin-bottom: 88px;
+    }
+}
+
+@media (width < 960px) {
+    .dress-description {
+        margin-top: 20px;
+    }
+
+    .slider {
+        margin-bottom: 95px;
+    }
+}
+
+@media (width < 640px) {
+    .dress-title {
+        margin-top: 72px;
+    }
+
+    .dress-text {
+        margin-top: 25px;
+    }
+
+    .dress-description {
+        width: 235px; 
+    }
+
+    .slider {
+        margin-top: 22px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (width < 480px) {
+    .dress-title {
+        margin-top: 20px;
+    }
+
+    .dress-text {
+        margin-top: 10px;
+    }
+
+    .slider {
+        margin-top: 28px;
+        margin-bottom: 76px;
+    }
+}

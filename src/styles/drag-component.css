@@ -1,0 +1,53 @@
+/* src/DragSlider.css */
+
+  .slider-container {
+    position: relative;
+    width: 280px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 33.8vh;
+  }
+  
+  .drag-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-family: Yeon Sung, sans-serif;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Плавная анимация */
+  }
+
+  
+  .drag-line {
+    position: absolute;
+    top: 50%;
+    left: 58px; 
+    width: calc(100% - 136px);
+    height: 1px;
+    background-image: linear-gradient(to right, #00000000 80%, #fff 20%);
+    background-position: top;
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+  }
+  
+  .drag-target {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% - 60px); /* Позиция второго кружка */
+    opacity: 0.8;
+  }
+  
