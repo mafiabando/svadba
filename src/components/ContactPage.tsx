@@ -10,7 +10,9 @@ const ContactPage: React.FC = () => {
               <h1 className="contact-title">организатор</h1>
               <p className="contact-description"> Если Вы подготовили для нас сюрприз или в случае возникновения вопросов, Вы всегда можете обратиться за помощью и согласованием к нашему свадебному организатору</p>
               <span className="contact-name">Анна Чаплыгина</span>
+              <a href='https://t.me/+79618146833' target='_blank'>
               <button className="contact-button">Позвонить</button>
+              </a>
           </div>
         </div>
       </div>
