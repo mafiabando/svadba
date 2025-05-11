@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/svadba/static/css/main.5224846e.css",
-    "main.js": "/svadba/static/js/main.f9b07483.js",
+    "main.css": "/svadba/static/css/main.72fb97d7.css",
+    "main.js": "/svadba/static/js/main.f883941b.js",
     "static/media/location_photo.jpg": "/svadba/static/media/location_photo.20cce987383deff479f2.jpg",
     "static/media/brown.JPG": "/svadba/static/media/brown.b34e9b4c22470a13246f.JPG",
     "static/media/Hamiltoneg.ttf": "/svadba/static/media/Hamiltoneg.0f535e11049ab9faa221.ttf",
@@ -10,11 +10,11 @@
     "static/media/background.png": "/svadba/static/media/background.44aa1ad6d7e950d36505.png",
     "static/media/vovan.png": "/svadba/static/media/vovan.7fc0f3ac9da6ea608bb9.png",
     "index.html": "/svadba/index.html",
-    "main.5224846e.css.map": "/svadba/static/css/main.5224846e.css.map",
-    "main.f9b07483.js.map": "/svadba/static/js/main.f9b07483.js.map"
+    "main.72fb97d7.css.map": "/svadba/static/css/main.72fb97d7.css.map",
+    "main.f883941b.js.map": "/svadba/static/js/main.f883941b.js.map"
   },
   "entrypoints": [
-    "static/css/main.5224846e.css",
-    "static/js/main.f9b07483.js"
+    "static/css/main.72fb97d7.css",
+    "static/js/main.f883941b.js"
   ]
 }
