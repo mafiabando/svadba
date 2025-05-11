@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/svadba/static/css/main.a7951326.css",
+    "main.css": "/svadba/static/css/main.5224846e.css",
     "main.js": "/svadba/static/js/main.f9b07483.js",
     "static/media/location_photo.jpg": "/svadba/static/media/location_photo.20cce987383deff479f2.jpg",
     "static/media/brown.JPG": "/svadba/static/media/brown.b34e9b4c22470a13246f.JPG",
@@ -10,11 +10,11 @@
     "static/media/background.png": "/svadba/static/media/background.44aa1ad6d7e950d36505.png",
     "static/media/vovan.png": "/svadba/static/media/vovan.7fc0f3ac9da6ea608bb9.png",
     "index.html": "/svadba/index.html",
-    "main.a7951326.css.map": "/svadba/static/css/main.a7951326.css.map",
+    "main.5224846e.css.map": "/svadba/static/css/main.5224846e.css.map",
     "main.f9b07483.js.map": "/svadba/static/js/main.f9b07483.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7951326.css",
+    "static/css/main.5224846e.css",
     "static/js/main.f9b07483.js"
   ]
 }
