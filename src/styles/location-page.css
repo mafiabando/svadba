@@ -14,12 +14,12 @@
 }
 
 .location-photo {
-    height: 50%;
+    height: 40%;
     background: url(../assets/location_photo.jpg) center center/cover;
 }
 
 .location-description {
-    height: 50%;
+    height: 60%;
     background: #870505;
     position: relative;
 }
@@ -42,10 +42,11 @@
 }
 
 .location-content {
-    padding-top: 403.5px;
+    padding-top: 308px;
     display: flex;
     flex-direction: column; /* Вертикальное расположение элементов */
     align-items: center; /* Центрирование по горизонтали */
+    gap: 30px;
 }
 
 .location-button {
@@ -60,16 +61,14 @@
 }
 
 .location-title_top {
-    margin-top: 37px;
     font-family: 'Hamiltoneg', Regular;
     font-weight: 100;
-    line-height: 65px;
-    font-size: 55px;
+    line-height: 1.18;
+    font-size: clamp(42px, 9.13vw, 55px);
     color: white;
 }
 
-.location-title_bottom {
-    margin-top: 13px;
+.location-title_middle {
     font-family: Arial, sans-serif;
     font-weight: 100;
     font-size: clamp(24px, 3.75vw,43px);
@@ -78,11 +77,17 @@
     color: #e7e3da;
 }
 
+.location-title-bottom {
+    font-family: 'Hamiltoneg', Regular;
+    font-weight: 100;
+    line-height: 1.18;
+    font-size: clamp(42px, 9.13vw, 55px);
+    color: white;
+}
+
 .address {
-    margin-top: 25.5px;
     font-family: 'Arial', sans-serif;
     font-weight: 100;
-    line-height: 1;
     font-size: clamp(12px, 2.345vw, 17px);
     line-height: clamp(17px, 2.395vw, 26px);
     text-transform:uppercase ;
@@ -90,7 +95,6 @@
 }
 
 .schedule {
-    margin-top: 50px;
     font-family: 'Arial', sans-serif;
     font-weight: 100;
     font-size: clamp(14px, 2.345vw, 17px);
@@ -108,27 +112,16 @@
 @media (width < 960px) {
     .location-container {
         width: 466px;
-        height: 754px;
-    }
-    
-    .location-title_top{
-        margin-top: 23px;
-    }
-    
-    .location-title_bottom{
-        margin-top: 12.5px;
+        height: 755px;
     }
 
     .location-container_border {
         margin: 20px;
     }
 
-    .schedule {
-        margin-top: 35px;
-    }
-
     .location-content {
-        padding-top: 326.5px;
+        padding-top: 251px;
+        gap: 20px;
     }
 }
 
@@ -139,29 +132,15 @@
     }
 
     .location-content {
-        padding-top: 396.5px;
+        padding-top: 307px;
+        gap: 40px;
     }
 
-    .location-title_top{
-        margin-top: 45px;
-    }
-
-    .location-title_bottom{
-        margin-top: 25px;
-    }
-
-    .address {
-        margin-top: 45px;
-    }
-
-    .schedule {
-        margin-top: 45px;
-    }
 }
 
 @media (width < 480px) {
     .location-container {
-        height: 704px;
+        height: 706px;
     }
 
     .location-container_border {
@@ -174,23 +153,8 @@
     }
 
     .location-content {
-        padding-top: 319px;
-    }
-
-    .location-title_top{
-        margin-top: 32px;
-    }
-
-    .location-title_bottom{
-        margin-top: 25px;
-    }
-
-    .address {
-        margin-top: 15px;
-    }
-
-    .schedule {
-        margin-top: 25px;
+        padding-top: 250px;
+        gap: 25px;
     }
 }
 

@@ -1,41 +1,52 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/wedding-page.css";
 
+
 const WeddingPage: React.FC = () => {
   const [isMusicPlaying, setIsMusicPlaying] = useState(true); // Статус воспроизведения музыки
   const [scrollPosition, setScrollPosition] = useState(0); // Позиция прокрутки
-
-  const audio = new Audio("/МОСКВА.mp3"); // Путь к файлу музыки
-  const imgRef = useRef<HTMLImageElement | null>(null); // Ссылка на изображение
+  const audio = useRef<HTMLAudioElement | null>(null);
 
   // Управление музыкой
   const toggleMusic = () => {
-    setIsMusicPlaying(!isMusicPlaying);
+    setIsMusicPlaying((prev) => !prev);
   };
 
-  // Автоматическое воспроизведение музыки при загрузке
+ // Автоматическое воспроизведение музыки при загрузке
   useEffect(() => {
-    audio.loop = true; // Воспроизводить бесконечно
+    audio.current = new Audio("track.mp3"); // Путь к файлу музыки
+    audio.current.loop = true; // Воспроизводить бесконечно
 
     if (isMusicPlaying) {
-      audio.play().catch((error) => {
+      audio.current.play().catch((error) => {
         console.error("Ошибка воспроизведения", error);
       });
     } else {
-      audio.pause();
+      audio.current.pause();
     }
 
     return () => {
-      audio.pause(); // Остановить музыку при размонтировании компонента
+      audio.current?.pause(); // Остановить музыку при размонтировании компонента
+      audio.current = null; // Удалить аудио при размонтировании
     };
-  }, [isMusicPlaying]);
+  }, []);
+
+  // Эффект для управления состоянием воспроизведения
+  useEffect(() => {
+    if (isMusicPlaying) {
+      audio.current?.play().catch((error) => {
+        console.error("Ошибка воспроизведения", error);
+      });
+    } else {
+      audio.current?.pause();
+    }
+  }, [isMusicPlaying]); // Зависимость от состояния воспроизведения
 
   useEffect(() => {
     const handleScroll = (e: Event) => {
       const newPosition = window.scrollY; // Используем window.scrollY для отслеживания прокрутки
       setScrollPosition(newPosition);
     };
-    console.log(window.screen.availHeight, window.screen.availWidth)
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -43,8 +54,7 @@ const WeddingPage: React.FC = () => {
   }, []);
 
   const translateY = scrollPosition * 0.5; // Анимация скролла
-  const transformStyle = `translateY(${translateY}px)`;
-
+  const transformStyle: React.CSSProperties = { transform: `translateY(${translateY}px)`}
   return (
     <>
       <div className="wedding-page">
@@ -56,27 +66,25 @@ const WeddingPage: React.FC = () => {
           <button className="music-control" onClick={toggleMusic}>
             {isMusicPlaying ? (
               <img
-                src="/heart.svg"
+                src="heart.svg"
                 alt="heart"
                 style={{ width: "100%", height: "100%" }}
               />
             ) : (
               <img
-                src="/heart2.svg"
+                src="heart2.svg"
                 alt="heart2"
                 style={{ width: "100%", height: "100%" }}
               />
             )}
-            <img src="/tap.png" alt="tap" className="tap" />
+            <img src="tap.png" alt="tap" className="tap" />
           </button>
           </div>
           {/* Фотография */}
-          <img
-            src="/vovan.png"
-            alt="Пара"
-            className="couple-photo"
-            style={{ transform: transformStyle }}
-          />
+          <div
+          className="couple-photo"
+          style={{ ...transformStyle}}
+        />
         </div>
     </>
   );

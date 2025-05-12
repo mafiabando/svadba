@@ -25,6 +25,7 @@
   background: url('../assets/background.png') no-repeat center center/cover;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  pointer-events: none;
 }
 
 .wedding-page::-webkit-scrollbar {
@@ -36,12 +37,7 @@
   text-align: center;
   padding-top: 55px; 
   position: relative;
-}
 
-.top-section button {
-  width: 105px;
-  height: 105px;
-  position: relative;
 }
 
 .tap {
@@ -57,7 +53,8 @@
 .main-title {
   font-family: 'Hamiltoneg', Regular;
   font-weight: 400;
-  font-size: clamp(40px, 6.25vw, 148px);
+  font-size: clamp(100px, 10.25vw, 148px);
+  line-height: 1;
   color: #8b0000;
 }
 
@@ -67,19 +64,24 @@
   font-size: clamp(37px, 4.6875vw, 75px);
   color: #4b4b4b; 
   text-transform: uppercase;
-  line-height: 1.157em;
+  line-height: 1;
   letter-spacing: 10px;
   margin-bottom: 30px;
-  margin-top: -4.3vw;
+  margin-top: -1.3vw;
 }
 
 .music-control {
+  width: 105px;
+  height: 105px;
+  position: relative;
   display: inline-block;
   border: none;
   background: none;
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  pointer-events: auto;
+  outline: none;
 }
 
 .music-control:hover {
@@ -87,20 +89,15 @@
 }
 
 .couple-photo {
+  background: url(../../public/vovan.png) center/cover;
   width: 324px; /* Ширина фотографии */
   height: 366px; /* Высота фотографии */
   display: block; /* Убедитесь, что изображение отображается как блок */
   margin-left: auto; /* Центрирование по горизонтали */
   margin-right: auto; /* Центрирование по горизонтали */
   transition: transform 0s ease-in-out; /* Убираем трансформацию, если она не нужна */
-  object-fit: cover;
 }
 
-@media (width <= 1440px) {
-  .sub-title {
-    margin-top: -3.33vw
-  }
-}
 
 @media (width < 1200px) {
   .top-section {
@@ -123,8 +120,18 @@
     height: 46px;
   }
 
+  .main-title {
+    font-size: clamp(40px, 8.7vw, 80px);
+  }
+
   .sub-title {
     margin-bottom: 17px;
+  }
+}
+
+@media (width < 640px) {
+  .sub-title {
+    letter-spacing: 2.5px;
   }
 }
 
@@ -134,15 +141,27 @@
     height: 328px; /* Высота фотографии */
   }
 
+  .top-section button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tap {
+    width: 28px;
+    height: 28px;
+  }
+
   .top-section {
     padding-top: 150px;
   }
 
-  .top-section h2 {
-    letter-spacing: 2.5px;
-  }
-
   .sub-title {
     margin-bottom: 25px;
+  }
+}
+
+@media (height < 960px) {
+  .top-section {
+    padding-top: 10vh;
   }
 }

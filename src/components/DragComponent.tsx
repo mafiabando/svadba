@@ -17,18 +17,32 @@ const DragComponent: React.FC<DragComponentProps> = ({onTargetReached}) => {
     if (!targetReached) setIsDragging(true);
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
-    if (!isDragging || !containerRef.current) return 
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const newPosition = e.clientX - containerRect.left - 20; // 20 - половина ширины ползунка
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!targetReached) setIsDragging(true);
+  };
 
-      const maxPosition = containerRect.width - 30 - 20; // 30px = половина второго кружка, 20px = половина ползунка
+  const handleMove = (clientX: number) => {
+    if (!containerRef.current) return;
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const newPosition = clientX - containerRect.left - 20; // 20 - половина ширины ползунка
 
-      // Ограничиваем движение ползунка
-      if (newPosition >= 0 && newPosition <= maxPosition) {
-        setPosition(newPosition);
-        currentPositionRef.current = newPosition;
+    const maxPosition = 281 - 30 - 20; // 30px = половина второго кружка, 20px = половина ползунка
+
+    // Ограничиваем движение ползунка
+    if (newPosition >= 0 && newPosition <= maxPosition) {
+      setPosition(newPosition);
+      currentPositionRef.current = newPosition;
     }
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!isDragging) return;
+    handleMove(e.clientX);
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    if (!isDragging) return;
+    handleMove(e.touches[0].clientX);
   };
 
 
@@ -49,25 +63,40 @@ const DragComponent: React.FC<DragComponentProps> = ({onTargetReached}) => {
       } else setPosition(0)
   };
 
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    handleMouseUp();
+  };
+
   useEffect(() => {
     const handleMouseMoveWrapper = (e: MouseEvent) => handleMouseMove(e);
     const handleMouseUpWrapper = () => handleMouseUp();
+    const handleTouchMoveWrapper = (e: TouchEvent) => handleTouchMove(e);
+    const handleTouchEndWrapper = () => handleTouchEnd();
 
     window.addEventListener('mousemove', handleMouseMoveWrapper);
     window.addEventListener('mouseup', handleMouseUpWrapper);
+    window.addEventListener('touchmove', handleTouchMoveWrapper, { passive: false });
+    window.addEventListener('touchend', handleTouchEndWrapper);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMoveWrapper);
       window.removeEventListener('mouseup', handleMouseUpWrapper);
+      window.removeEventListener('touchmove', handleTouchMoveWrapper);
+      window.removeEventListener('touchend', handleTouchEndWrapper);
     };
   }, [isDragging]);
 
   return (
     <div className="slider-container" ref={containerRef}>
       <div
+        className="drag-area" // Невидимая область перетаскивания
+        onMouseDown={handleMouseDown}
+        onTouchStart={handleTouchStart}
+      />
+      <div
         className={`drag-button ${isDragging ? 'dragging' : ''}`}
         style={{ left: position }}
-        onMouseDown={handleMouseDown}
       >
         {'>'}
       </div>

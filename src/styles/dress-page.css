@@ -2,8 +2,13 @@
     height: 100%;
     width: 100%;
     text-align: center;
-    justify-items: center;
     padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+     -webkit-box-align: center; /* Префикс для Safari */
+    align-items: center;
+    -webkit-justify-content: center; /* Префикс для Safari */
+    justify-content: center;
 }
 
 .dress-title {
@@ -105,6 +110,8 @@
     margin-top: 30px;
     margin-bottom: 100px;
     overflow: hidden; /* Скрываем лишнее */
+    display: flex;
+    justify-content: center;
 }
 
 .image {

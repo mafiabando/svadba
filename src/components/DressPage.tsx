@@ -3,18 +3,18 @@ import "../styles/dress-page.css"; // Импортируем CSS
 
 const DressPage: React.FC = () => {
     const images = [
-        "url(/1.jpeg)", // Замените на ваши изображения
-        "url(/2.jpeg)",
-        "url(/3.jpeg)",
-        "url(/4.jpeg)",
-        "url(/5.jpeg)",
-        "url(/6.jpeg)",
-        "url(/7.jpeg)",
-        "url(/8.jpeg)",
-        "url(/9.jpeg)",
-        "url(/10.jpeg)",
-        "url(/11.jpeg)",
-        "url(/12.jpeg)",
+        "url(1.jpeg)", // Замените на ваши изображения
+        "url(2.jpeg)",
+        "url(3.jpeg)",
+        "url(4.jpeg)",
+        "url(5.jpeg)",
+        "url(6.jpeg)",
+        "url(7.jpeg)",
+        "url(8.jpeg)",
+        "url(9.jpeg)",
+        "url(10.jpeg)",
+        "url(11.jpeg)",
+        "url(12.jpeg)",
       ];
     
       const [currentIndex, setCurrentIndex] = useState(0);

@@ -2,15 +2,30 @@
 
   .slider-container {
     position: relative;
-    width: 280px;
-    height: 60px;
+    width: 300px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 33.8vh;
   }
   
+  .drag-area {
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Убедитесь, что область перетаскивания выше остальных элементов */
+  }
+
   .drag-button {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
     position: absolute;
     display: flex;
     justify-content: center;
@@ -30,7 +45,7 @@
     position: absolute;
     top: 50%;
     left: 58px; 
-    width: calc(100% - 136px);
+    width: calc(280px - 136px);
     height: 1px;
     background-image: linear-gradient(to right, #00000000 80%, #fff 20%);
     background-position: top;
@@ -47,7 +62,7 @@
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-    left: calc(100% - 60px); /* Позиция второго кружка */
+    left: calc(280px - 60px); /* Позиция второго кружка */
     opacity: 0.8;
   }
   

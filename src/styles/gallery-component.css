@@ -2,8 +2,7 @@
     white-space: nowrap; /* Убирает перенос строк */
     display: flex; /* Позволяет фотографиям размещаться в одну строку */
     animation: gallery 30s linear infinite; /* Анимация прокрутки */
-    max-width: 100%;
-
+    max-width: 100vw;
   }
 
   .gallery-inner:hover {

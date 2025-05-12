@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     <div className="header">
       <h1 className="title">Приглашение</h1>
       <div className="message">
-        <span>save our dates</span>
+        <span>save the date</span>
         <span>19.09.2025</span>
       </div>
     </div>

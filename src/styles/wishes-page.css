@@ -2,8 +2,10 @@
     height: 100%;
     width: 100%;
     text-align: center;
-    justify-items: center;
     padding: 56px 0 58px;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -68,7 +70,8 @@ margin-bottom: 57px;
     right: 0;
     left: 0;
     bottom: 0;
-    align-content: end;
+    display: flex;
+    align-items: end;
 }
 
 .wishes-description_text {

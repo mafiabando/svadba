@@ -8,21 +8,47 @@ const FormPage: React.FC = () => {
   const [drinkPreferences, setDrinkPreferences] = useState<string[]>([]);
 
   // Функция для обработки отправки формы
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log({
-      attendance,
-      names,
-      drinkPreferences,
-    });
-    // Здесь можно добавить логику отправки данных на сервер
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const formData = {
+    attendance,
+    names,
+    drinkPreferences
   };
+
+  try {
+    const response = await fetch("http://localhost:5000/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.text(); // Получаем ответ как текст
+
+    if (result.includes("success")) {
+      alert("Форма успешно отправлена!");
+      setAttendance(null);
+      setNames("");
+      setDrinkPreferences([]);
+    } else {
+      alert("Ошибка при отправке формы.");
+      console.error(result);
+    }
+
+  } catch (error) {
+    console.error("Ошибка сети:", error);
+    alert("Произошла ошибка при отправке данных.");
+  }
+};
 
   return (
     <div className="form-page">
       <h1 className="form_title">Анкета гостя</h1>
       <p className="form_text">
-        Пожалуйста, подтвердите своё присутствие на торжестве до 01.12.2023 г.
+        Пожалуйста, подтвердите своё присутствие на торжестве до 19.08.2025 г.
       </p>
 
       {/* Форма */}
@@ -53,23 +79,11 @@ const FormPage: React.FC = () => {
             />
             Прийти не получится
           </label>
-          <br />
-          <label className="form-label">
-            <input
-              className="form-radio"
-              type="radio"
-              name="attendance"
-              value="with-partner"
-              checked={attendance === "with-partner"}
-              onChange={() => setAttendance("with-partner")}
-            />
-            Буду со своей парой (+1)
-          </label>
         </div>
 
         {/* Имя и Фамилия */}
         <div className="form-section">
-          <h3 className="form-section_title">Имя и Фамилия</h3>
+          <h3 className="form-section_title form-title_name">Имя и Фамилия</h3>
           <div className="form-section_textarea_container">
           <textarea
             className="form-section_textarea"
@@ -136,6 +150,24 @@ const FormPage: React.FC = () => {
               }
             />
             Коньяк
+          </label>
+          <br />
+          <label className="form-label">
+            <input
+              className="form-checkbox"
+              type="checkbox"
+              name="drink"
+              value="samogon"
+              checked={drinkPreferences.includes("samogon")}
+              onChange={(e) =>
+                setDrinkPreferences((prev) =>
+                  e.target.checked
+                    ? [...prev, "samogon"]
+                    : prev.filter((item) => item !== "samogon")
+                )
+              }
+            />
+            Самогон
           </label>
           <br />
           <label className="form-label">

@@ -14,11 +14,12 @@ const LocationPage: React.FC = () => {
               <button className="location-button">На карту</button>
               </a>
               <h2 className="location-title_top">Локация</h2>
-              <h1 className="location-title_bottom">б/з Астраханская</h1>
+              <h1 className="location-title_middle">Астраханская</h1>
               <p className="address">
                 АСТРАХАНЬ<br />
                 ул. Ульяновых, 6/10
               </p>
+              <h3 className="location-title-bottom">Тайминг</h3>
               <div className="schedule">
                 <p>16:30 | СБОР ГОСТЕЙ<br/>
                 17:00 | Встреча молодоженов, церемония<br/>

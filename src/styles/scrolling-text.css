@@ -4,17 +4,20 @@
   overflow: hidden; /* Скрыть текст, выходящий за пределы блока */
   position: relative;
   background-color: #870505; /* Цвет фона (по желанию) */
-  align-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .scrolling-text {
+  max-width: 100vw;
   color: #fff;
   font-size: clamp(16px, 2.5vw, 20px);
   line-height: clamp(23px, 3.593vw, 30px);
   font-weight: 100;
   white-space: nowrap; /* Запрет на перенос строк */
   position: absolute;
-  animation: scroll 300s linear infinite; /* Анимация */
+  animation: scroll 10s linear infinite; /* Анимация */
+  top: 50%;
 }
 
 /* Анимация движения текста */
@@ -23,6 +26,6 @@
     transform: translate(0%, -50%); /* Начальная позиция (вне экрана справа) */
   }
   100% {
-    transform: translate(-100%, -50%); /* Конечная позиция (вне экрана слева) */
+    transform: translate(-50%, -50%); /* Конечная позиция (вне экрана слева) */
   }
 }
