@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/svadba/static/css/main.91f63fe2.css",
-    "main.js": "/svadba/static/js/main.eb61a2a6.js",
+    "main.css": "/svadba/static/css/main.c21b08ee.css",
+    "main.js": "/svadba/static/js/main.d1f289ad.js",
     "static/media/location_photo.jpg": "/svadba/static/media/location_photo.20cce987383deff479f2.jpg",
     "static/media/brown.JPG": "/svadba/static/media/brown.b34e9b4c22470a13246f.JPG",
     "static/media/Hamiltoneg.ttf": "/svadba/static/media/Hamiltoneg.0f535e11049ab9faa221.ttf",
+    "static/media/photo7.jpg": "/svadba/static/media/photo7.9fa73ecb51e7734e8300.jpg",
     "static/media/red.JPG": "/svadba/static/media/red.63bc0be965361ddc28df.JPG",
     "static/media/black.JPG": "/svadba/static/media/black.00f225c4653c95cbca82.JPG",
     "static/media/background.png": "/svadba/static/media/background.44aa1ad6d7e950d36505.png",
-    "static/media/vovan.png": "/svadba/static/media/vovan.7fc0f3ac9da6ea608bb9.png",
+    "static/media/photo1.jpg": "/svadba/static/media/photo1.7fc0f3ac9da6ea608bb9.jpg",
+    "static/media/photo3.jpg": "/svadba/static/media/photo3.7dff32c6c340228a9558.jpg",
     "index.html": "/svadba/index.html",
-    "main.91f63fe2.css.map": "/svadba/static/css/main.91f63fe2.css.map",
-    "main.eb61a2a6.js.map": "/svadba/static/js/main.eb61a2a6.js.map"
+    "main.c21b08ee.css.map": "/svadba/static/css/main.c21b08ee.css.map",
+    "main.d1f289ad.js.map": "/svadba/static/js/main.d1f289ad.js.map"
   },
   "entrypoints": [
-    "static/css/main.91f63fe2.css",
-    "static/js/main.eb61a2a6.js"
+    "static/css/main.c21b08ee.css",
+    "static/js/main.d1f289ad.js"
   ]
 }
