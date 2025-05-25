@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body {
@@ -29,8 +28,9 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('/public/vovan.png') no-repeat center center/cover;
-  filter: brightness(0.5);
+  background: url('/public/photo1.jpg') no-repeat center/cover;
+  background-position: center calc(50% + 300px);
+  filter: brightness(0.8);
   z-index: 1;
   transition: opacity 0.5s ease;
   min-height: 550px;
@@ -59,4 +59,10 @@ body {
 .current-page.unlocked {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.9); /* Исчезновение текущей страницы */
+}
+
+@media (width < 1000px) {
+  .background {
+    background-position: center center;
+  }
 }

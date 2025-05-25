@@ -9,7 +9,7 @@ const ContactPage: React.FC = () => {
           <div className="contact-container_border">
               <h1 className="contact-title">организатор</h1>
               <p className="contact-description"> Если Вы подготовили для нас сюрприз или в случае возникновения вопросов, Вы всегда можете обратиться за помощью и согласованием к нашему свадебному организатору</p>
-              <span className="contact-name">Анна Чаплыгина</span>
+              <span className="contact-name">Annawedding</span>
               <a href='https://t.me/+79618146833' target='_blank'>
               <button className="contact-button">Написать</button>
               </a>

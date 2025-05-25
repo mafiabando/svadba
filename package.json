@@ -1,5 +1,5 @@
 {
-  "name": "svadba_vovana",
+  "name": "svadba",
   "version": "0.1.0",
   "homepage": "https://mafiabando.github.io/svadba",
   "private": true,
@@ -33,7 +33,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "prefix:css": "postcss src/styles/contact-page.css src/styles/dress-page.css src/styles/visit-page.css --dir src/styles/",
+    "prefix:css": "postcss src/styles/*.css --dir src/styles/",
     "server": "node server.js"
   },
   "eslintConfig": {

@@ -3,19 +3,15 @@ import "../styles/dress-page.css"; // Импортируем CSS
 
 const DressPage: React.FC = () => {
     const images = [
-        "url(1.jpeg)", // Замените на ваши изображения
-        "url(2.jpeg)",
-        "url(3.jpeg)",
-        "url(4.jpeg)",
-        "url(5.jpeg)",
-        "url(6.jpeg)",
-        "url(7.jpeg)",
-        "url(8.jpeg)",
-        "url(9.jpeg)",
-        "url(10.jpeg)",
-        "url(11.jpeg)",
-        "url(12.jpeg)",
-      ];
+  `url(${process.env.PUBLIC_URL}/1.jpg)`,
+  `url(${process.env.PUBLIC_URL}/2.jpg)`,
+  `url(${process.env.PUBLIC_URL}/3.jpg)`,
+  `url(${process.env.PUBLIC_URL}/4.jpg)`,
+  `url(${process.env.PUBLIC_URL}/5.jpg)`,
+  `url(${process.env.PUBLIC_URL}/6.jpg)`,
+  `url(${process.env.PUBLIC_URL}/7.jpg)`,
+  `url(${process.env.PUBLIC_URL}/8.jpg)`
+];
     
       const [currentIndex, setCurrentIndex] = useState(0);
     
@@ -55,7 +51,7 @@ const DressPage: React.FC = () => {
         </div>
 
         </div>
-        <span className="dress-description">Для джентльменов уместным будет классический костюм.</span>
+        <span className="dress-description">Образы для вдохновения.</span>
         <div className="slider">
 
           <div className="image" style={{ backgroundImage: images[currentIndex]}}>  

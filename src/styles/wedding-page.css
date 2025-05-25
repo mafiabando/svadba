@@ -89,7 +89,7 @@
 }
 
 .couple-photo {
-  background: url(../../public/vovan.png) center/cover;
+  background: url(../../public/photo1.jpg) center/cover;
   width: 324px; /* Ширина фотографии */
   height: 366px; /* Высота фотографии */
   display: block; /* Убедитесь, что изображение отображается как блок */

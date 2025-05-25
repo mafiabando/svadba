@@ -18,7 +18,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   };
 
   try {
-    const response = await fetch("http://localhost:5000/submit", {
+    const response = await fetch("https://svadba-server-1.onrender.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -46,8 +46,8 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   return (
     <div className="form-page">
-      <h1 className="form_title">Анкета гостя</h1>
-      <p className="form_text">
+      <h1 className="form-title">Анкета гостя</h1>
+      <p className="form-text">
         Пожалуйста, подтвердите своё присутствие на торжестве до 19.08.2025 г.
       </p>
 
@@ -103,13 +103,13 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="form-checkbox"
               type="checkbox"
               name="drink"
-              value="red-wine"
-              checked={drinkPreferences.includes("red-wine")}
+              value="кр вино"
+              checked={drinkPreferences.includes("кр вино")}
               onChange={(e) =>
                 setDrinkPreferences((prev) =>
                   e.target.checked
-                    ? [...prev, "red-wine"]
-                    : prev.filter((item) => item !== "red-wine")
+                    ? [...prev, "кр вино"]
+                    : prev.filter((item) => item !== "кр вино")
                 )
               }
             />
@@ -121,13 +121,13 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="form-checkbox"
               type="checkbox"
               name="drink"
-              value="white-wine"
-              checked={drinkPreferences.includes("white-wine")}
+              value="бел вино"
+              checked={drinkPreferences.includes("бел вино")}
               onChange={(e) =>
                 setDrinkPreferences((prev) =>
                   e.target.checked
-                    ? [...prev, "white-wine"]
-                    : prev.filter((item) => item !== "white-wine")
+                    ? [...prev, "бел вино"]
+                    : prev.filter((item) => item !== "бел вино")
                 )
               }
             />
@@ -139,13 +139,13 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="form-checkbox"
               type="checkbox"
               name="drink"
-              value="cognac"
-              checked={drinkPreferences.includes("cognac")}
+              value="коньяк"
+              checked={drinkPreferences.includes("коньяк")}
               onChange={(e) =>
                 setDrinkPreferences((prev) =>
                   e.target.checked
-                    ? [...prev, "cognac"]
-                    : prev.filter((item) => item !== "cognac")
+                    ? [...prev, "коньяк"]
+                    : prev.filter((item) => item !== "коньяк")
                 )
               }
             />
@@ -157,13 +157,13 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="form-checkbox"
               type="checkbox"
               name="drink"
-              value="samogon"
-              checked={drinkPreferences.includes("samogon")}
+              value="самогон"
+              checked={drinkPreferences.includes("самогон")}
               onChange={(e) =>
                 setDrinkPreferences((prev) =>
                   e.target.checked
-                    ? [...prev, "samogon"]
-                    : prev.filter((item) => item !== "samogon")
+                    ? [...prev, "самогон"]
+                    : prev.filter((item) => item !== "самогон")
                 )
               }
             />
@@ -175,13 +175,13 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="form-checkbox"
               type="checkbox"
               name="drink"
-              value="vodka"
-              checked={drinkPreferences.includes("vodka")}
+              value="водка"
+              checked={drinkPreferences.includes("водка")}
               onChange={(e) =>
                 setDrinkPreferences((prev) =>
                   e.target.checked
-                    ? [...prev, "vodka"]
-                    : prev.filter((item) => item !== "vodka")
+                    ? [...prev, "водка"]
+                    : prev.filter((item) => item !== "водка")
                 )
               }
             />
@@ -193,13 +193,13 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="form-checkbox"
               type="checkbox"
               name="drink"
-              value="champagne"
-              checked={drinkPreferences.includes("champagne")}
+              value="шампанское"
+              checked={drinkPreferences.includes("шампанское")}
               onChange={(e) =>
                 setDrinkPreferences((prev) =>
                   e.target.checked
-                    ? [...prev, "champagne"]
-                    : prev.filter((item) => item !== "champagne")
+                    ? [...prev, "шампанское"]
+                    : prev.filter((item) => item !== "шампанское")
                 )
               }
             />
@@ -211,13 +211,13 @@ const handleSubmit = async (e: React.FormEvent) => {
               className="form-checkbox"
               type="checkbox"
               name="drink"
-              value="non-alcoholic"
-              checked={drinkPreferences.includes("non-alcoholic")}
+              value="без алк"
+              checked={drinkPreferences.includes("без алк")}
               onChange={(e) =>
                 setDrinkPreferences((prev) =>
                   e.target.checked
-                    ? [...prev, "non-alcoholic"]
-                    : prev.filter((item) => item !== "non-alcoholic")
+                    ? [...prev, "без алк"]
+                    : prev.filter((item) => item !== "без алк")
                 )
               }
             />

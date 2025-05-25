@@ -3,19 +3,27 @@ import "../styles/wedding-page.css";
 
 
 const WeddingPage: React.FC = () => {
-  const [isMusicPlaying, setIsMusicPlaying] = useState(true); // Статус воспроизведения музыки
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false); // Статус воспроизведения музыки
   const [scrollPosition, setScrollPosition] = useState(0); // Позиция прокрутки
   const audio = useRef<HTMLAudioElement | null>(null);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false); // Флаг для взаимодействия
 
-  // Управление музыкой
-  const toggleMusic = () => {
-    setIsMusicPlaying((prev) => !prev);
-  };
-
- // Автоматическое воспроизведение музыки при загрузке
+  // Создаем аудио при монтировании
   useEffect(() => {
-    audio.current = new Audio("track.mp3"); // Путь к файлу музыки
-    audio.current.loop = true; // Воспроизводить бесконечно
+    audio.current = new Audio("track.mp3");
+    audio.current.loop = true;
+
+    return () => {
+      if (audio.current) {
+        audio.current.pause();
+        audio.current = null;
+      }
+    };
+  }, []);
+
+  // Управление музыкой после взаимодействия
+  useEffect(() => {
+    if (!audio.current || !hasUserInteracted) return;
 
     if (isMusicPlaying) {
       audio.current.play().catch((error) => {
@@ -24,23 +32,44 @@ const WeddingPage: React.FC = () => {
     } else {
       audio.current.pause();
     }
+  }, [isMusicPlaying, hasUserInteracted]);
+
+  // Запуск музыки при первом скролле или касании
+  useEffect(() => {
+    const handleFirstInteraction = () => {
+      if (!hasUserInteracted && audio.current) {
+        setHasUserInteracted(true);
+        setIsMusicPlaying(true);
+        audio.current.play().catch((error) => {
+          console.error("Ошибка первого воспроизведения", error);
+        });
+
+        // Удаляем обработчики
+        window.removeEventListener('wheel', handleFirstInteraction, false );
+        window.removeEventListener('touchstart', handleFirstInteraction);
+      }
+    };
+
+    // Добавляем обработчики для десктопа и мобильных
+    window.addEventListener('wheel', handleFirstInteraction, { passive: false });
+    window.addEventListener('touchstart', handleFirstInteraction);
 
     return () => {
-      audio.current?.pause(); // Остановить музыку при размонтировании компонента
-      audio.current = null; // Удалить аудио при размонтировании
+      window.removeEventListener('wheel', handleFirstInteraction, false);
+      window.removeEventListener('touchstart', handleFirstInteraction);
     };
   }, []);
 
-  // Эффект для управления состоянием воспроизведения
-  useEffect(() => {
-    if (isMusicPlaying) {
-      audio.current?.play().catch((error) => {
-        console.error("Ошибка воспроизведения", error);
-      });
+  // Кнопка управления музыкой
+  const toggleMusic = () => {
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true);
+      setIsMusicPlaying(true);
+      audio.current?.play().catch(console.error);
     } else {
-      audio.current?.pause();
+      setIsMusicPlaying((prev) => !prev);
     }
-  }, [isMusicPlaying]); // Зависимость от состояния воспроизведения
+  };
 
   useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -66,18 +95,22 @@ const WeddingPage: React.FC = () => {
           <button className="music-control" onClick={toggleMusic}>
             {isMusicPlaying ? (
               <img
-                src="heart.svg"
+                src={`${process.env.PUBLIC_URL}/heart.svg`}
                 alt="heart"
                 style={{ width: "100%", height: "100%" }}
               />
             ) : (
               <img
-                src="heart2.svg"
+                src={`${process.env.PUBLIC_URL}/heart2.svg`}
                 alt="heart2"
                 style={{ width: "100%", height: "100%" }}
               />
             )}
-            <img src="tap.png" alt="tap" className="tap" />
+            <img 
+            src={`${process.env.PUBLIC_URL}/tap.png`}
+            alt="tap" 
+            className="tap"
+            />
           </button>
           </div>
           {/* Фотография */}

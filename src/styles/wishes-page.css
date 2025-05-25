@@ -2,8 +2,8 @@
     height: 100%;
     width: 100%;
     text-align: center;
-    padding: 56px 0 58px;
-     display: flex;
+    padding: 56px 0 26px;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -27,7 +27,7 @@
     vertical-align: middle;
     color: #4b4b4b;
     font-size: clamp(15px, 2.3vw , 17px);
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', sans-serif;
     line-height: clamp(23px, 3.59vw , 28px);
     font-weight: 300;
 }
@@ -47,9 +47,9 @@ margin-bottom: 57px;
 }
 
 .wishes-photo {
-    width: 484px;
-    height: 416px;
-    background: url(../../public/vovan.png) center/cover;
+    width: 500px;
+    height: 500px;
+    background: url(../../public/photo7.jpg) center/cover;
     position: relative;
     z-index: 1;
 }
@@ -100,8 +100,8 @@ margin-bottom: 57px;
     }
 
     .wishes-photo {
-        width: 384px;
-        height: 295px;
+        width: 450px;
+        height: 450px;
     }
 
     .wishes-description_container {
@@ -117,7 +117,8 @@ margin-bottom: 57px;
     }
 
     .wishes-photo {
-        height: 377px;
+        width: 400px;
+        height: 400px;
     }
 
     .wishes-description_border {
