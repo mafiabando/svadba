@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.23c89e2f.css",
+    "main.css": "/static/css/main.eca876ba.css",
     "main.js": "/static/js/main.3d170e44.js",
     "static/media/location_photo.jpg": "/static/media/location_photo.20cce987383deff479f2.jpg",
     "static/media/brown.JPG": "/static/media/brown.b34e9b4c22470a13246f.JPG",
@@ -8,15 +8,16 @@
     "static/media/Hamiltoneg.ttf": "/static/media/Hamiltoneg.0f535e11049ab9faa221.ttf",
     "static/media/photo7.jpg": "/static/media/photo7.9fa73ecb51e7734e8300.jpg",
     "static/media/black.JPG": "/static/media/black.00f225c4653c95cbca82.JPG",
+    "static/media/timesnrcyrmt.ttf": "/static/media/timesnrcyrmt.8c4d4d3b834acd650745.ttf",
     "static/media/background.png": "/static/media/background.44aa1ad6d7e950d36505.png",
     "static/media/photo1.jpg": "/static/media/photo1.7fc0f3ac9da6ea608bb9.jpg",
     "static/media/photo3.jpg": "/static/media/photo3.7dff32c6c340228a9558.jpg",
     "index.html": "/index.html",
-    "main.23c89e2f.css.map": "/static/css/main.23c89e2f.css.map",
+    "main.eca876ba.css.map": "/static/css/main.eca876ba.css.map",
     "main.3d170e44.js.map": "/static/js/main.3d170e44.js.map"
   },
   "entrypoints": [
-    "static/css/main.23c89e2f.css",
+    "static/css/main.eca876ba.css",
     "static/js/main.3d170e44.js"
   ]
 }
